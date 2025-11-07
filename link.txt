@@ -1,0 +1,3 @@
+https://github.com/Meritus3266/Exam_3
+
+http://127.0.0.1:5000/docs#/default/predict_wine_quality_predict_post

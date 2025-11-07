@@ -1,0 +1,40 @@
+
+
+The goal of this project was to predict wine quality using physicochemical features of wine samples. The task followed a structured machine learning workflow — from data cleaning to API deployment  with an emphasis on interpretability and business relevance.
+
+Data Preparation & Cleaning
+
+Dataset: Red wine quality dataset containing numerical  variables such as 'acidity', 'sulphates', 'alcohol', etc.
+
+Cleaning steps:
+Removed duplicate records, there are 937 duplicates in the data so i have to remove them so that we will be able to get good prediction.
+Handled missing values with isna().sum() but fortunately there are no missing values in the data
+
+Verified correct data types, tried to check the datatypes which was numerical 'float' and 'integer' 
+Detected and visualized outliers (using boxplots).
+Scaled all numerical features using StandardScaler to ensure uniform model input.
+
+Target Mapping
+The target variable quality (ranging from 3 to 9) was categorized into qualitative labels for interpretability:
+Best: 8–9
+Good: 6–7
+Average: 5
+Bad: 3–4
+This mapping makes predictions more meaningful to wine producers and stakeholders.
+
+Modeling Approach
+Base Model: Logistic Regression — provided a baseline accuracy for comparison.
+Advanced Models:
+Random Forest
+K-Nearest Neighbors (KNN)
+Gradient Boosting
+Support Vector Machine (SVM)
+After evaluation on test data using Accuracy, Precision, Recall, F1-score, and Confusion Matrix, the Random Forest Classifier emerged as the best-performing model.
+
+Model Performance
+The Random Forest model achieved the highest accuracy and balanced F1-score across all classes.
+It performs particularly well for “Good” and “Best” wines, meaning it can reliably identify wines of higher commercial value.
+Precision and Recall tradeoffs indicate that the model avoids excessive false positives (incorrectly labeling poor wines as good) — crucial for maintaining brand quality.
+
+Feature Importance
+Wines with higher alcohol, sulphate, and citric acid levels tend to be rated higher in quality, while excessive volatile acidity or density reduces perceived quality.
